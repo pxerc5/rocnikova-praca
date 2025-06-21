@@ -1,0 +1,331 @@
+/* Použitie fontu Poppins */
+body {
+  font-family: 'Poppins', sans-serif;
+  font-size: 19px;
+  color: #e0e0e0;
+  margin: 0;
+  transition: background-color 0.3s, color 0.3s;
+ 
+  background-color: rgb(29, 2, 104) !important;
+
+
+  /* --- PRIDANÝ KÓD PRE POZADIE --- */
+
+  /* 1. Záložná farba, ak by sa obrázok nenačítal */
+  background-color: #121212; 
+
+  /* 2. Samotný obrázok na pozadí s tmavým prekrytím */
+  background-image: 
+    /* Vrstva navrchu: Polopriehľadná čierna, ktorá stmaví obrázok */
+    linear-gradient(rgba(18, 18, 18, 0.9), rgba(18, 18, 18, 0.9)),
+    /* Vrstva pod ňou: Tvoj obrázok školy (ZMEŇ CESTU K SÚBORU!) */
+    url('zochova.jpg'); 
+
+  /* 3. Nastavenie, ako sa má obrázok správať */
+  background-size: cover; /* Roztiahne obrázok, aby pokryl celú plochu */
+  background-position: center center; /* Vždy centruje obrázok */
+  background-repeat: no-repeat; /* Zamedzí opakovaniu/kachličkovaniu obrázku */
+  background-attachment: fixed; /* Kľúčová vlastnosť! Fixuje pozadie, takže sa neposúva spolu so stránkou. Vytvára to pekný paralax efekt. */
+}
+
+.container {
+  display: flex;
+  min-height: 100vh; /* Zabezpečí, aby kontajner bol vysoký aspoň ako celá obrazovka */
+}
+
+
+/* Väčšie nadpisy (H1 a H2) */
+header h1, main h1 {
+  font-size: 4.2rem;
+  font-weight: 700;
+  text-align: center;
+  color: #64b5f6;
+  text-shadow: 0 0 6px rgba(100, 181, 246, 0.8);
+  margin-bottom: 1.5rem;
+}
+
+main h2 {
+  font-size: 3rem;
+  font-weight: 600;
+  text-align: center;
+  color: #82b1ff;
+  margin-bottom: 1.2rem;
+  text-shadow: 0 0 4px rgba(130, 177, 255, 0.7);
+}
+
+/* Sidebar */
+.sidebar {
+  width: 260px;
+  background-color: #1f1f1f;
+  padding: 25px 20px;
+  box-shadow: 3px 0 8px rgba(0, 0, 0, 0.7);
+  border-right: 2px solid #333;
+  font-size: 1.35rem;
+  color: #cfd8dc;
+  font-weight: 500;
+}
+
+.sidebar h2 {
+  font-size: 2rem;
+  color: #90caf9;
+  margin-bottom: 1.5rem;
+  text-shadow: 0 0 5px #90caf9;
+}
+
+.sidebar ul li {
+  margin-bottom: 20px;
+}
+
+.sidebar ul li a {
+  color: #cfd8dc;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.3s, text-shadow 0.3s;
+}
+
+.sidebar ul li a:hover,
+.sidebar ul li a.active {
+  color: #82b1ff;
+  text-shadow: 0 0 8px #82b1ff;
+}
+
+/* Obsah */
+/* Obsah */
+.content {
+  flex: 1;
+  padding: 60px 70px;
+  background-color: #181818;
+  color: #e0e0e0;
+  font-size: 1.60rem; /* <-- ZVÄČŠILI SME TÚTO HODNOTU */
+  line-height: 1.85;
+  box-shadow: inset 0 0 15px rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  border: 1.5px solid #333;
+  margin: 20px;
+}
+
+/* Karty */
+.card {
+  background-color: #222;
+  padding: 30px 40px;
+  margin-bottom: 40px;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.55);
+  border: 1.8px solid #333;
+  transition: transform 0.3s;
+  font-size: 1.60rem; /* <-- AJ TÚTO HODNOTU SME ZVÄČŠILI */
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 30px rgba(100, 181, 246, 0.65);
+}
+
+/* Úvodná stránka špecificky */
+/* Úvodná stránka špecificky */
+.intro-page {
+  /* Pôvodné vlastnosti ostávajú */
+  color: #d0d9e6;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 40px;
+  min-height: 100vh;
+  text-shadow: 0 0 6px rgba(0, 0, 0, 0.55);
+  
+  /* --- TU PRICHÁDZA ZMENA --- */
+
+  /* 1. Definujeme FARBU pozadia (tvoj pôvodný gradient) */
+  background-color: #1a222a; /* Záložná farba */
+  background-image: linear-gradient(135deg, #1a222a, #2b323a);
+  
+  /* 2. Pridáme druhú vrstvu - OBRÁZOK (ZMEŇ CESTU!) */
+  background-image: 
+    linear-gradient(135deg, #1a222a, #2b323a), /* Gradient ostáva ako vrchná vrstva */
+    url('obrazky/zochova.jpg');   /* Obrázok je pod ním */
+
+  /* 3. Nastavíme, ako sa má obrázok správať */
+  background-size: cover;
+  background-position: center;
+  
+  /* 4. MÁGIA: Povieme, ako sa majú vrstvy zmiešať */
+  background-blend-mode: luminosity; /* Skús aj overlay alebo soft-light! */
+}
+
+.intro-page header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.intro-page h1 {
+  font-size: 5rem;
+  font-weight: 800;
+  margin: 0;
+  color: #cfd8dc;
+}
+
+.intro-subtitle {
+  font-size: 2.3rem;
+  font-weight: 500;
+  color: #90a4ae;
+  margin-top: 15px;
+  font-style: italic;
+}
+
+/* Úvodná karta */
+.intro-card {
+  background: rgba(255, 255, 255, 0.07);
+  border: 2px solid #90a4ae;
+  box-shadow: 0 0 22px #90a4ae;
+  max-width: 700px;
+  font-size: 1.7rem;
+  line-height: 1.7;
+  padding: 45px 55px;
+  border-radius: 16px;
+  text-align: center;
+}
+
+/* Placeholder miesto pre obrázky */
+.image-placeholder {
+  background-color: #333;
+  color: #999;
+  border: 2px dashed #555;
+  border-radius: 8px;
+  height: 160px;
+  margin: 25px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-style: italic;
+  font-size: 1.15rem;
+}
+
+/* Linky */
+a {
+  color: #82b1ff;
+  font-weight: 600;
+  transition: color 0.3s;
+}
+
+a:hover {
+  color: #a7c7ff;
+}
+
+/* Responzivita */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+  .sidebar {
+    width: 100%;
+    box-shadow: none;
+    border-right: none;
+    border-bottom: 2px solid #333;
+  }
+  .content {
+    padding: 35px 30px;
+    margin: 10px;
+    font-size: 1.2rem;
+  }
+}
+
+
+/* 1. Štýl pre "RÁM" (kontajner) */
+.image-container {
+  /* Nastavujeme šírku rámu (napr. 50% ako sme chceli) */
+  width: 50%; 
+  max-width: 600px; /* Maximálna šírka rámu */
+  
+  /* TOTO JE KĽÚČOVÉ: Nastavujeme maximálnu VÝŠKU rámu */
+  max-height: 400px; /* Hodnotu si môžeš upraviť podľa potreby */
+
+  /* Centrovanie a okraje rámu */
+  margin: 30px auto;
+  
+  /* Vzhľad rámu (aby mal zaoblené rohy a tieň) */
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  
+  /* DÔLEŽITÉ: Skryje časti obrázka, ktoré prečnievajú z rámu */
+  overflow: hidden; 
+}
+
+
+/* 2. Upravený štýl pre samotný OBRÁZOK vnútri rámu */
+/* ============================================= */
+/*  KOMPLETNÝ KÓD PRE OBRÁZKY - SKOPÍRUJ TOTO     */
+/* ============================================= */
+
+/* ======================================= */
+/*      ŠTÝLY PRE OBRÁZKY V OBSAHU         */
+/* ======================================= */
+
+/* 1. Štýl pre "RÁM" (kontajner), ktorý obaľuje obrázok */
+/* ======================================= */
+/*      ŠTÝLY PRE OBRÁZKY (BG-IMAGE METÓDA) */
+/* ======================================= */
+
+/* 1. Spoločné vlastnosti pre všetky "rámy" obrázkov */
+.image-frame {
+  width: 60%;
+  max-width: 700px;
+  
+  /* Pevne nastavíme výšku a pomer strán */
+  height: 400px;
+  
+  margin: 25px auto;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
+
+  /* Základné nastavenia pre obrázok na pozadí */
+  background-size: cover; /* Vyplní rám bez deformácie (oreže) */
+  background-repeat: no-repeat;
+}
+
+/* 2. Priradenie konkrétneho obrázka a jeho pozície pre každý rám */
+
+/* Pre kvetinku */
+#vankus-kvet {
+  background-image: url('obrazky/kvetinka.jpg');
+  background-position: center 55%; /* Horizontálne v strede, vertikálne v 30% od vrchu */
+}
+
+/* Pre srdiečko */
+#vankus-vlna {
+  background-image: url('obrazky/srdiecko.jpg');
+  background-position: center 45%; /* Horizontálne v strede, vertikálne v 70% od vrchu */
+}
+
+
+/* Pre fotku z basketbalu */
+#foto-basketbal {
+  background-image: url('obrazky/basketbal.jpg');
+  
+  /* Pozíciu si môžeš potom doladiť, ale 'center' je dobrý začiatok */
+  background-position: center center; 
+}
+
+/* Pre fotku šijacieho stroja */
+#foto-sijaci-stroj {
+  background-image: url('obrazky/sijaci-stroj.jpg');
+  
+  /* Aj tu si môžeš pozíciu doladiť podľa potreby */
+  background-position: center 70%;
+}
+
+/* Pre fotku budovy Zochovej */
+#foto-zochova {
+  background-image: url('obrazky/zochova-skola.jpg'); /* Zmeň názov súboru, ak je iný */
+  background-position: center center; /* 'center' je zvyčajne dobrý začiatok */
+}
+
+/* ======================================= */
+/*      MODIFIKÁCIA PRE VEĽKÝ RÁM          */
+/* ======================================= */
+
+.image-frame-large {
+  width: 85%; /* Bude zaberať 85% šírky karty */
+  max-width: 1000px; /* Maximálna šírka až 1000px */
+  height: 600px; /* Výška 600px */
+}
