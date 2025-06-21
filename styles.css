@@ -316,7 +316,7 @@ a:hover {
 
 /* Pre fotku budovy Zochovej */
 #foto-zochova {
-  background-image: url('obrazky/zochova-skola.jpeg'); /* Zmeň názov súboru, ak je iný */
+  background-image: url('obrazky/zochova-skola.jpg'); /* Zmeň názov súboru, ak je iný */
   background-position: center center; /* 'center' je zvyčajne dobrý začiatok */
 }
 
